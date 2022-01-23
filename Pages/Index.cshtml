@@ -1,10 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome 2</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 class="display-4">Welcome to repro XXXXXXX</h1>
+	<p>Why is HotReloading not working simply when Web ServiceWorker (caching, offline handling PWA etc.) is enabled?</p>
+	<p>
+		It is working when we add manually
+		<code>
+			&lt;script src="/_framework/aspnetcore-browser-refresh.js"&gt;&lt;/script&gt;
+		</code>,
+		to <strong>_Layout</strong> at the bottom. Save if run From Visual Studio 2022 or from CLI dotnet run/dotnet watch run
+	</p>
+	<p>Solution: either don't use ServiceWorker or add above script</p>
+	<p>
+		Try Ctrl+F5 in VS2022 and changing this file
+	</p>
+	<br />
+	<p>Issue: XXXXXXX.</p>
 </div>

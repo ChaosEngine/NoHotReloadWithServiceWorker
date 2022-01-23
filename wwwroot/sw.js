@@ -9,7 +9,7 @@ self.addEventListener('install', function (event) {
 	const domain = swUrl.searchParams.get('domain');
 	let isDev = swUrl.searchParams.get('isDev');
 	isDev = isDev === true || isDev === "true" || isDev === 1 || isDev === "1" ? true : false;
-	const suffix = isDev ? '' : '.min';
+	const suffix = '';//isDev ? '' : '.min';
 
 	let RESOURCES = [
 		`css/site${suffix}.css`,
@@ -18,8 +18,8 @@ self.addEventListener('install', function (event) {
 
 	if (isDev) {
 		RESOURCES = RESOURCES.concat([
-			'lib/jquery-validation/dist/jquery.validate.min.js',
-			'lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'
+			`lib/jquery-validation/dist/jquery.validate${suffix}.js`,
+			`lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive${suffix}.js`
 		]);
 	}
 	else {
